@@ -1,0 +1,19 @@
+<html>	
+	<head>
+		<title>Hello Shrimps!</title>
+		<link href="styles.css" rel="stylesheet">
+		<script src="dash.all.js"></script>
+		<script>
+		  	function play() { 
+				let context = new Dash.di.DashContext();
+				let player = new MediaPlayer(context);
+				player.startup();
+				player.attachView(document.querySelector("#live-video"));
+				player.attachSource("http://localhost/dash/shrimps.mpd"); 
+			}
+		</script>
+	</head>
+	<body class="main" onload="play()">
+		<video id="live-video" controls></video>
+	</body>
+</html>

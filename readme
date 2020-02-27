@@ -1,0 +1,11 @@
+Build nginx-1.14.0 from source, remember to pull sources into apt by uncommenting the source repository lines in your apt sources.  Also compile the super special version of nginx-rtmp-module found at https://github.com/ut0mt8/nginx-rtmp-module into it.
+
+From wherever your nginx source is, run ./configure --add-module=../nginx-rtmp-module to add the super special module.
+
+If you follow the tutorial exactly from https://isrv.pw/html5-live-streaming-with-mpeg-dash you will get something that works.  The hard part is filling in the missing pieces they don't tell you about.
+
+The config file for this thing is incuded and should normally live at /usr/local/nginx/conf/nginx.conf
+
+Also the script for streaming things is included, but will need to have the -f source replaced with v4l2 and the -i changed to match the appropriate /dev/video*
+
+When you actually do deploy this make sure all the URLs are correct.
